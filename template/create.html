@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>User</title>      
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+        <style type="text/css">
+            .error{
+                    color:red;
+                    margin-top:5px;
+                    font-size:17px;
+                    font-weight:bold;
+                }
+        </style>
+    </head>
+    <body>
+       
+        <div class="container">
+            <br>
+            <a href="/" class="btn btn-primary">Back</a>
+            <h1 style="text-align:center">Employee Form</h1>
+            <br>
+            <form method="post" id="user-form" action="/submitdata">
+      
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" style="font-size:18px" id="name" autocomplete="off" class="form-control" placeholder="Enter a Name">
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" name="city" style="font-size:18px" id="city" autocomplete="off" class="form-control" placeholder="Enter a City">
+                        </div>
+                      
+                        <input type="submit" class="form-control btn btn-info" value="submit">   
+                    
+                    </div>   
+
+                </div>   
+
+            </form>
+            
+           
+        </div>
+        <script>
+            $(document).ready(function(){
+                
+                
+                $("#user-form").validate({
+                    rules:{
+                        name: "required",
+                        city: "required",
+                    },
+                    
+                    messages:{
+                        name: "*Please Enter a Name",
+                        city: "*Please Enter a City",
+                    }
+                });
+            });
+        </script>
+    </body>
+    
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>User</title>      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            tr , td {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+     
+        <div class="container">
+            <br>
+          
+            <h1 style="text-align:center">Employee</h1>
+            <br>
+          <center> <a href="/create"><button type="button" class="btn btn-info">Add New Employee</button></a></center>
+            <br>
+            <table class="table" border="1">
+                <thead class="thead-dark">
+                   <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{range .}}
+                   <tr>
+                        <td>  {{.Id}} </td>
+                        <td>   {{.Name}} </td>
+                        <td>   {{.City}} </td>
+                        <td>   <a href="edit?id={{ .Id }}"><button type="button" class="btn btn-info">Edit</button> </td></a>
+                        <td>   <a href="delete?id={{ .Id }}"><button type="button" class="btn btn-danger">Delete</button> </td></a>
+                  </tr>
+                {{end}}
+            </tbody>
+              </table>
+            
+
+            
+        </div>
+
+    </body>
+    
+</html>
